@@ -1,0 +1,45 @@
+﻿<html lang='ja' dir='ltr'>
+<head>
+<meta charset='utf-8'>
+<script type='text/javascript' src='js/flotr2/flotr2.min.js'></script>
+<style type='text/css'>#bc_id {
+width : 600px;
+height: 400px;
+margin: 20 auto;
+}
+.bc_id-title {
+font-size:16px;
+font-weight:bold;
+text-align:center;
+margin:50px 0 0;
+}
+</style>
+
+</head>
+<body>
+<p class='bc_id-title'>sample</p>
+
+<div id="bc_id"></div>
+<script>
+(function basic_radar(container) {
+var s0 = { label : 'label0', data : [[0,5],[1,2],[2,4],[3,3],[4,2],[5,2],[6,5]]};var s1 = { label : 'label1', data : [[0,5],[1,2],[2,2],[3,4],[4,2],[5,5],[6,5]]};var s2 = { label : 'label2', data : [[0,1],[1,1],[2,4],[3,5],[4,2],[5,3],[6,2]]};var ticks = [
+[0, "tick_0"]
+,[1, "tick_1"]
+,[2, "tick_2"]
+,[3, "tick_3"]
+,[4, "tick_4"]
+,[5, "tick_5"]
+,[6, "tick_6"]
+]
+graph = Flotr.draw(container,[s0,s1,s2], {
+radar : { show : true}, 
+grid  : { circular : true, minorHorizontalLines : true}, 
+yaxis : { min : 0, max : 6, minorTickFreq : 2}, 
+xaxis : { ticks : ticks},
+mouse : { track : true}
+});
+})(document.getElementById("bc_id"));
+</script>
+
+</body>
+</html>

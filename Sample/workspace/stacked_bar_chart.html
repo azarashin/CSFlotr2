@@ -1,0 +1,83 @@
+﻿<html lang='ja' dir='ltr'>
+<head>
+<meta charset='utf-8'>
+<script type='text/javascript' src='js/flotr2/flotr2.min.js'></script>
+<style type='text/css'>#bc_id {
+width : 600px;
+height: 400px;
+margin: 20 auto;
+}
+.bc_id-title {
+font-size:16px;
+font-weight:bold;
+text-align:center;
+margin:50px 0 0;
+}
+</style>
+
+</head>
+<body>
+<p class='bc_id-title'>sample</p>
+
+<div id="bc_id"></div>
+<script>
+(function bars_stacked(container, horizontal) {
+var d0 = [
+[16.9,0]
+,[93.8,1]
+,[42.5,2]
+,[64.8,3]
+,[83.3,4]
+];
+var d1 = [
+[26.2,0]
+,[60.5,1]
+,[87.5,2]
+,[32.4,3]
+,[42.4,4]
+];
+var d2 = [
+[9.9,0]
+,[30.2,1]
+,[85,2]
+,[15.4,3]
+,[79.2,4]
+];
+var ticks = [
+[0, 'x0']
+,[1, 'x1']
+,[2, 'x2']
+,[3, 'x3']
+,[4, 'x4']
+]; 
+graph = Flotr.draw(container,[
+{ data : d0, label : 'label0' },
+{ data : d1, label : 'label1' },
+{ data : d2, label : 'label2' },
+], {
+legend : {
+backgroundColor : '#D2E8FF', 
+position : 'se'},
+bars : {
+show : true,
+stacked : true,
+horizontal : horizontal,
+barWidth : 0.6,
+lineWidth : 1,
+shadowSize : 0
+},
+yaxis : { ticks : ticks},
+mouse : {
+track : true,
+relative : true
+},
+grid : {
+verticalLines : horizontal,
+horizontalLines : !horizontal
+}
+});
+})(document.getElementById("bc_id"), true);
+</script>
+
+</body>
+</html>

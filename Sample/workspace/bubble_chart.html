@@ -1,0 +1,65 @@
+﻿<html lang='ja' dir='ltr'>
+<head>
+<meta charset='utf-8'>
+<script type='text/javascript' src='js/flotr2/flotr2.min.js'></script>
+<style type='text/css'>#bc_id {
+width : 600px;
+height: 400px;
+margin: 20 auto;
+}
+.bc_id-title {
+font-size:16px;
+font-weight:bold;
+text-align:center;
+margin:50px 0 0;
+}
+</style>
+
+</head>
+<body>
+<p class='bc_id-title'>sample</p>
+
+<div id="bc_id"></div>
+<script>
+(function basic_bubble(container) {
+var d0 = [
+	[88,32,4],
+	[47,28,1],
+	[94,92,1],
+	[22,67,1],
+	[84,80,1],
+	[14,76,5],
+	[22,40,1]
+];
+var d1 = [
+	[71,56,0],
+	[63,8,2],
+	[8,91,5],
+	[97,12,3],
+	[18,64,4],
+	[29,13,1],
+	[40,64,1]
+];
+var d2 = [
+	[80,86,3],
+	[44,24,5],
+	[26,36,5],
+	[31,62,1],
+	[21,17,4],
+	[64,84,1],
+	[82,86,0]
+];
+graph = Flotr.draw(container,[
+{ data : d0, label : 'label0' },
+{ data : d1, label : 'label1' },
+{ data : d2, label : 'label2' },
+], {
+bubbles : { show : true, baseRadius : 5 },
+xaxis   : { min : -2, max : 105 },
+yaxis   : { min : 1, max : 101 }
+});
+})(document.getElementById("bc_id"));
+</script>
+
+</body>
+</html>

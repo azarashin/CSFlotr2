@@ -1,0 +1,50 @@
+﻿<html lang='ja' dir='ltr'>
+<head>
+<meta charset='utf-8'>
+<script type='text/javascript' src='js/flotr2/flotr2.min.js'></script>
+<style type='text/css'>#bc_id {
+width : 600px;
+height: 400px;
+margin: 20 auto;
+}
+.bc_id-title {
+font-size:16px;
+font-weight:bold;
+text-align:center;
+margin:50px 0 0;
+}
+</style>
+
+</head>
+<body>
+<p class='bc_id-title'>sample</p>
+
+<div id="bc_id"></div>
+<script>
+(function basic_pie(container) {
+var d0 = [[0,1]];var d1 = [[0,2]];var d2 = [[0,3]];graph = Flotr.draw(container,[
+{ data : d0, label : 'label0', pie : { explode : 6}},
+{ data : d1, label : 'label1', pie : { explode : 6}},
+{ data : d2, label : 'label2', pie : { explode : 6}},
+], {
+HtmlText : false,
+grid : {
+verticalLines : false,
+horizontalLines : false
+},
+xaxis : { showLabels : false },
+yaxis : { showLabels : false },
+pie : {
+show : true, 
+},
+mouse : { track : true },
+legend : {
+position : 'se',
+backgroundColor : '#D2E8FF'
+}
+});
+})(document.getElementById("bc_id"));
+</script>
+
+</body>
+</html>

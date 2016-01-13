@@ -1,0 +1,83 @@
+﻿<html lang='ja' dir='ltr'>
+<head>
+<meta charset='utf-8'>
+<script type='text/javascript' src='js/flotr2/flotr2.min.js'></script>
+<style type='text/css'>#bc_id {
+width : 600px;
+height: 400px;
+margin: 20 auto;
+}
+.bc_id-title {
+font-size:16px;
+font-weight:bold;
+text-align:center;
+margin:50px 0 0;
+}
+</style>
+
+</head>
+<body>
+<p class='bc_id-title'>sample</p>
+
+<div id="bc_id"></div>
+<script>
+(function basic_bars(container, horizontal) {
+var d0 = [
+[0,16.9]
+,[1,93.8]
+,[2,42.5]
+,[3,64.8]
+,[4,83.3]
+];
+var d1 = [
+[0.2666667,26.2]
+,[1.266667,60.5]
+,[2.266667,87.5]
+,[3.266667,32.4]
+,[4.266667,42.4]
+];
+var d2 = [
+[0.5333334,9.9]
+,[1.533333,30.2]
+,[2.533333,85]
+,[3.533333,15.4]
+,[4.533333,79.2]
+];
+var ticks = [
+[0, 'x0']
+,[1, 'x1']
+,[2, 'x2']
+,[3, 'x3']
+,[4, 'x4']
+]; 
+graph = Flotr.draw(container,[
+{ data : d0, label : 'label0' },
+{ data : d1, label : 'label1' },
+{ data : d2, label : 'label2' },
+], {
+legend : {
+backgroundColor : '#D2E8FF', 
+position : 'se'},
+bars : {
+show : true,
+stacked : false,
+horizontal : horizontal,
+barWidth : 0.2666667,
+lineWidth : 1,
+shadowSize : 0
+},
+xaxis : { ticks : ticks},
+mouse : {
+track : true,
+relative : true
+},
+grid : {
+verticalLines : horizontal,
+horizontalLines : !horizontal
+}
+});
+})(document.getElementById("bc_id"), false);
+</script>
+
+</body>
+</html>
