@@ -43,6 +43,7 @@
     <Compile Include="BasicBarChart.cs" />
     <Compile Include="BubbleChart.cs" />
     <Compile Include="GraphBuilderCore.cs" />
+    <Compile Include="HistgramChart.cs" />
     <Compile Include="LineChart.cs" />
     <Compile Include="PieChart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

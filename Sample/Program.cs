@@ -42,7 +42,7 @@ namespace Sample
                 data[x].label = "label" + x; 
                 for (int y = 0; y < data_max; y++)
                 {
-                    data[x].data [y]= r.Next(1000) / 10.0f;
+                    data[x].data [y]= r.Next(10000) / 10.0f;
                 }
             }
 
@@ -53,8 +53,12 @@ namespace Sample
             BasicBarChart bc = new BasicBarChart();
             bc.SetHorizontal(false);
 
+            HistgramChart hc = new HistgramChart();
+            hc.SetHorizontal(false);
+
             bc.GenerateSimpleHtml("simple_bar_chart.html", "sample", data, xlabel);
             sb.GenerateSimpleHtml("stacked_bar_chart.html", "sample", data, xlabel);
+            hc.GenerateSimpleHtml("histgram_chart.html", "sample", data, xlabel);
 
             return; 
 
