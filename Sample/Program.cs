@@ -56,9 +56,9 @@ namespace Sample
             HistgramChart hc = new HistgramChart();
             hc.SetHorizontal(false);
 
-            bc.GenerateSimpleHtml("simple_bar_chart.html", "sample", data, xlabel);
-            sb.GenerateSimpleHtml("stacked_bar_chart.html", "sample", data, xlabel);
-            hc.GenerateSimpleHtml("histgram_chart.html", "sample", data, xlabel);
+            bc.GenerateSimpleHtml("simple_bar_chart.html", "sample", data, xlabel, "x-label", "y-label");
+            sb.GenerateSimpleHtml("stacked_bar_chart.html", "sample", data, xlabel, "x-label", "y-label");
+            hc.GenerateSimpleHtml("histgram_chart.html", "sample", data, xlabel, "x-label", "y-label");
 
             return; 
 
@@ -92,7 +92,7 @@ namespace Sample
 
             LineChart lc = new LineChart();
 
-            lc.GenerateSimpleHtml("line_chart.html", "sample", data, xlabel); 
+            lc.GenerateSimpleHtml("line_chart.html", "sample", data, xlabel, "x-label", "y-label"); 
 
 
         }
@@ -173,7 +173,7 @@ namespace Sample
             }
 
             BubbleChart lc = new BubbleChart();
-            lc.GenerateSimpleHtml("bubble_chart.html", "sample", data); 
+            lc.GenerateSimpleHtml("bubble_chart.html", "sample", data, "x-label", "y-label"); 
 
         }
     

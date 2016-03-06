@@ -19,7 +19,7 @@ namespace CSFlotr2
             public string label; 
         }
 
-        public abstract string GenerateGraphBody(string id, Data[] data, string[] xlabel);
+        public abstract string GenerateGraphBody(string id, Data[] data, string[] xlabel, string xtitle, string ytitle);
 
         protected bool m_horizontal = false;
 
@@ -29,7 +29,7 @@ namespace CSFlotr2
         }
 
 
-        public void GenerateSimpleHtml(string filename, string title, BarChart.Data[] data, string[] xlabel)
+        public void GenerateSimpleHtml(string filename, string title, BarChart.Data[] data, string[] xlabel, string xtitle, string ytitle)
         {
             string bc_id = "bc_id";
 
@@ -55,7 +55,7 @@ namespace CSFlotr2
 
 
             writer.WriteLine(gbc.GenerateGraphTitle(bc_id, title));
-            writer.WriteLine(GenerateGraphBody(bc_id, data, xlabel));
+            writer.WriteLine(GenerateGraphBody(bc_id, data, xlabel, xtitle, ytitle));
 
 
 

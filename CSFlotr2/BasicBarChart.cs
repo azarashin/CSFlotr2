@@ -18,7 +18,7 @@ namespace CSFlotr2
 
         }
 
-        public override string GenerateGraphBody(string id, Data[] data, string[] xlabel)
+        public override string GenerateGraphBody(string id, Data[] data, string[] xlabel, string xtitle, string ytitle)
         {
             string ret = "";
             string horizontal;
@@ -94,11 +94,13 @@ namespace CSFlotr2
 
             if (m_horizontal)
             {
-                ret += "yaxis : { ticks : ticks},\n";
+                ret += "xaxis : { title: '" + xtitle + "'},\n";
+                ret += "yaxis : { ticks : ticks, title: '" + ytitle + "'},\n";
             }
             else
             {
-                ret += "xaxis : { ticks : ticks},\n"; 
+                ret += "xaxis : { ticks : ticks, title: '" + xtitle + "'},\n";
+                ret += "yaxis : { title: '" + ytitle + "'},\n";
             }
 
             ret += "mouse : {\n";

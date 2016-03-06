@@ -22,7 +22,7 @@ namespace CSFlotr2
             public bool show_point = false; 
         }
 
-        public string GenerateGraphBody(string id, Data[] data)
+        public string GenerateGraphBody(string id, Data[] data, string xtitle, string ytitle)
         {
             string ret = "";
 
@@ -71,6 +71,8 @@ namespace CSFlotr2
             ret += "position : 'se'";
             ret += "},\n";
 
+            ret += "xaxis : { title: '" + xtitle + "'},\n";
+            ret += "yaxis : { title: '" + ytitle + "'},\n";
             ret += "grid : {\n";
             ret += "verticalLines : false,\n";
             ret += "backgroundColor : {\n";
@@ -89,7 +91,7 @@ namespace CSFlotr2
 
         }
 
-        public void GenerateSimpleHtml(string filename, string title, LineChart.Data[] data, string[] xlabel)
+        public void GenerateSimpleHtml(string filename, string title, LineChart.Data[] data, string[] xlabel, string xtitle, string ytitle)
         {
             string bc_id = "bc_id";
 
@@ -115,7 +117,7 @@ namespace CSFlotr2
 
 
             writer.WriteLine(gbc.GenerateGraphTitle(bc_id, title));
-            writer.WriteLine(GenerateGraphBody(bc_id, data));
+            writer.WriteLine(GenerateGraphBody(bc_id, data, xtitle, ytitle));
 
 
 

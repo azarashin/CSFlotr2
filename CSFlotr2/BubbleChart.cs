@@ -25,7 +25,7 @@ namespace CSFlotr2
             public string label = "";
         }
 
-        public string GenerateGraphBody(string id, Data[] data)
+        public string GenerateGraphBody(string id, Data[] data, string xtitle, string ytitle)
         {
             string ret = "";
 
@@ -82,8 +82,8 @@ namespace CSFlotr2
             ret += "], {\n";
 
             ret += "bubbles : { show : true, baseRadius : " + base_r + " },\n"; 
-            ret += "xaxis   : { min : " + xmin + ", max : " + xmax + " },\n";
-            ret += "yaxis   : { min : " + ymin + ", max : " + ymax + " }\n"; 
+            ret += "xaxis   : { min : " + xmin + ", max : " + xmax + " , title: '" + xtitle + "'},\n";
+            ret += "yaxis   : { min : " + ymin + ", max : " + ymax + " , title: '" + ytitle + "'}\n"; 
             ret += "});\n";
             ret += "})(document.getElementById(\"" + id + "\"));\n";
 
@@ -93,7 +93,7 @@ namespace CSFlotr2
 
         }
 
-        public void GenerateSimpleHtml(string filename, string title, BubbleChart.Data[] data)
+        public void GenerateSimpleHtml(string filename, string title, BubbleChart.Data[] data, string xtitle, string ytitle)
         {
             string bc_id = "bc_id";
 
@@ -119,7 +119,7 @@ namespace CSFlotr2
 
 
             writer.WriteLine(gbc.GenerateGraphTitle(bc_id, title));
-            writer.WriteLine(GenerateGraphBody(bc_id, data));
+            writer.WriteLine(GenerateGraphBody(bc_id, data, xtitle, ytitle));
 
 
 
