@@ -47,13 +47,16 @@ namespace CSFlotr2
 
             for (int i = 0; i < xlabel.Count(); i++)
             {
-                if (i != 0)
+                if ((xlabel.Count() < xlabel_max) || (i == 0) || (i % (xlabel.Count() / xlabel_max) == 0))
                 {
-                    ret += ",";
+                    if (i != 0)
+                    {
+                        ret += ",";
+                    }
+
+                    ret += "[" + i + ", '" + xlabel[i] + "']\n";
                 }
 
-                if((xlabel.Count() < xlabel_max) || (i == 0) || (i % (xlabel.Count() / xlabel_max) == 0))
-                ret += "[" + i + ", '" + xlabel[i] + "']\n";
 
             }
             ret += "]; \n";
