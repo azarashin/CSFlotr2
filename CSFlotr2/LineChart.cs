@@ -22,10 +22,10 @@ namespace CSFlotr2
             public bool show_point = false; 
         }
 
-        public string GenerateGraphBody(string id, Data[] data, string xtitle, string ytitle)
+        public string GenerateGraphBody(string id, Data[] data, string[] xlabel, string xtitle, string ytitle)
         {
             string ret = "";
-
+            int xlabel_max = 8; 
 
             ret += "<div id=\"" + id + "\"></div>\n";
             ret += "<script>\n";
@@ -42,6 +42,22 @@ namespace CSFlotr2
                 }
                 ret += "];"; 
             }
+
+            ret += "var ticks = [\n";
+
+            for (int i = 0; i < xlabel.Count(); i++)
+            {
+                if (i != 0)
+                {
+                    ret += ",";
+                }
+
+                if((xlabel.Count() < xlabel_max) || (i == 0) || (i % (xlabel.Count() / xlabel_max) == 0))
+                ret += "[" + i + ", '" + xlabel[i] + "']\n";
+
+            }
+            ret += "]; \n";
+
 
             ret += "graph = Flotr.draw(container,[\n"; 
             for(int x=0;x<data.GetLength(0);x++) {
@@ -71,7 +87,7 @@ namespace CSFlotr2
             ret += "position : 'se'";
             ret += "},\n";
             ret += "yaxis : { title: \"" + ytitle + "\"},\n";
-            ret += "xaxis : { title: \"" + xtitle + "\", labelsAngle: 30},\n";
+            ret += "xaxis : { title: \"" + xtitle + "\", ticks : ticks, labelsAngle: 30},\n";
 
             ret += "grid : {\n";
             ret += "verticalLines : false,\n";
@@ -117,7 +133,7 @@ namespace CSFlotr2
 
 
             writer.WriteLine(gbc.GenerateGraphTitle(bc_id, title));
-            writer.WriteLine(GenerateGraphBody(bc_id, data, xtitle, ytitle));
+            writer.WriteLine(GenerateGraphBody(bc_id, data, xlabel, xtitle, ytitle));
 
 
 
