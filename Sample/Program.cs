@@ -70,9 +70,9 @@ namespace Sample
             int category_max = 3;
             int data_max = 200;
             LineChart.Data[] data = new LineChart.Data[category_max];
-            string[] xlabel = new string[category_max];
+            string[] xlabel = new string[data_max];
 
-            for (int x = 0; x < category_max; x++)
+            for (int x = 0; x < data_max; x++)
             {
                 xlabel[x] = "x" + x;
             }
