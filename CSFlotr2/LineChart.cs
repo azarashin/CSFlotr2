@@ -70,18 +70,18 @@ namespace CSFlotr2
             ret += "backgroundColor : '#D2E8FF', \n";
             ret += "position : 'se'";
             ret += "},\n";
+            ret += "yaxis : { title: \"" + ytitle + "\"},\n";
+            ret += "xaxis : { title: \"" + xtitle + "\", labelsAngle: 30},\n";
 
-            ret += "xaxis : { title: '" + xtitle + "'},\n";
-            ret += "yaxis : { title: '" + ytitle + "'},\n";
             ret += "grid : {\n";
             ret += "verticalLines : false,\n";
             ret += "backgroundColor : {\n";
             ret += "colors : [[0,'#fff'], [1,'#ccc']],\n";
             ret += "start : 'top',\n";
             ret += "end : 'bottom'\n";
-            ret += "}\n";
-
-            ret += "}\n";
+            ret += "}, \n";
+            ret += "}, \n";
+            ret += "HtmlText: false \n";
             ret += "});\n";
             ret += "})(document.getElementById(\"" + id + "\"));\n";
 

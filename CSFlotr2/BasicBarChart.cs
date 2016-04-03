@@ -94,13 +94,13 @@ namespace CSFlotr2
 
             if (m_horizontal)
             {
-                ret += "xaxis : { title: '" + xtitle + "'},\n";
-                ret += "yaxis : { ticks : ticks, title: '" + ytitle + "'},\n";
+                ret += "yaxis : { title: \"" + ytitle + "\", ticks : ticks},\n";
+                ret += "xaxis : { title: \"" + xtitle + "\", labelsAngle: 30},\n";
             }
             else
             {
-                ret += "xaxis : { ticks : ticks, title: '" + xtitle + "'},\n";
-                ret += "yaxis : { title: '" + ytitle + "'},\n";
+                ret += "yaxis : { title: \"" + ytitle + "\"},\n";
+                ret += "xaxis : { title: \"" + xtitle + "\", ticks : ticks, labelsAngle: 30},\n"; 
             }
 
             ret += "mouse : {\n";
@@ -112,7 +112,8 @@ namespace CSFlotr2
             ret += "grid : {\n";
             ret += "verticalLines : horizontal,\n";
             ret += "horizontalLines : !horizontal\n";
-            ret += "}\n";
+            ret += "}, \n";
+            ret += "HtmlText: false \n";
             ret += "});\n";
             ret += "})(document.getElementById(\"" + id + "\"), " + horizontal + ");\n";
 
