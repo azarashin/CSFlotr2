@@ -23,31 +23,31 @@ margin:50px 0 0;
 <script>
 (function basic_bubble(container) {
 var d0 = [
-	[53,21,2],
-	[28,82,3],
-	[46,98,0],
-	[80,5,4],
-	[56,93,5],
-	[53,1,5],
-	[17,58,3]
+	[62,51,4],
+	[35,46,4],
+	[60,76,3],
+	[44,9,1],
+	[55,0,2],
+	[21,29,0],
+	[98,68,4]
 ];
 var d1 = [
-	[99,33,1],
-	[52,72,4],
-	[73,52,1],
-	[20,73,3],
-	[82,13,0],
-	[86,18,2],
-	[43,82,4]
+	[4,47,5],
+	[69,32,0],
+	[62,59,1],
+	[1,40,4],
+	[9,55,0],
+	[78,12,0],
+	[23,45,3]
 ];
 var d2 = [
-	[18,11,5],
-	[26,65,2],
-	[86,42,3],
-	[92,50,2],
-	[65,54,5],
-	[10,76,0],
-	[83,72,2]
+	[73,95,5],
+	[1,16,1],
+	[15,90,0],
+	[89,98,2],
+	[63,58,0],
+	[97,66,0],
+	[81,98,0]
 ];
 graph = Flotr.draw(container,[
 { data : d0, label : 'label0' },
@@ -55,8 +55,8 @@ graph = Flotr.draw(container,[
 { data : d2, label : 'label2' },
 ], {
 bubbles : { show : true, baseRadius : 5 },
-xaxis   : { min : 5, max : 105 , title: 'x-label'},
-yaxis   : { min : -9, max : 103 , title: 'y-label'}
+xaxis   : { min : -8, max : 107 , title: 'x-label'},
+yaxis   : { min : -7, max : 105 , title: 'y-label'}
 });
 })(document.getElementById("bc_id"));
 </script>
